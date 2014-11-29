@@ -62,12 +62,7 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
-}
-
-.wrapper {
-    width: 90%;
-    margin: 0 5%;
+    font: 12px/26px Helvetica, Helvetica Neue, Arial;
 }
 
 /* ===================
@@ -100,6 +95,7 @@ body {
 nav ul {
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 nav a {
@@ -109,10 +105,10 @@ nav a {
 
     text-align: center;
     text-decoration: none;
-    font-weight: bold;
 
     color: white;
     background: #e44d26;
+    width: 100%;
 }
 
 nav a:hover,
@@ -158,14 +154,44 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+h1, h2, h3 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
+nav a {
+  margin-bottom: 0;
+  border-bottom: 1px solid #C94422;
+  border-top: 1px solid #d3694e;
+  text-align: left;
+  padding-left: 1em;
+  font-weight: regular;
+}
 
+nav a:hover {
+  text-decoration: none;
+  background-color: #C94422;
+  border-bottom: 1px solid #d3694e;
+  border-top: 1px solid #C94422;
 
+}
 
+small {
+  font-size: 0.6em;
+}
 
+.title {
+  margin-bottom: 1.5em;
+}
 
+.fa-2x {
+  text-align: right;
+  padding-left: 4em;
+}
 
-
+.fa-2x:hover {
+  color: #ddd;
+}
 
 
 
