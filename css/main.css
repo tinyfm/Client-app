@@ -113,49 +113,7 @@ nav a:hover {
 .ie7 .title {
   padding-top: 20px;
 }
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
 
-h1, h2, h3 {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 30px;
-}
-nav a {
-  margin-bottom: 0;
-  border-bottom: 1px solid #C94422;
-  border-top: 1px solid #d3694e;
-  text-align: left;
-  padding-left: 1em;
-  font-weight: regular;
-  line-height: 16px;
-}
-a small {
-  font-size: 10px;
-  font-style: italic;
-}
-nav a:hover {
-  text-decoration: none;
-  background-color: #C94422;
-  border-bottom: 1px solid #d3694e;
-  border-top: 1px solid #C94422;
-}
-small {
-  font-size: 0.6em;
-}
-.title {
-  margin-bottom: 1em;
-}
-.fa-2x {
-  text-align: right;
-}
-.fa-2x:hover {
-  color: #ddd;
-}
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -332,4 +290,57 @@ small {
   h2, h3 {
     page-break-after: avoid;
   }
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1, h2, h3 {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  text-decoration: underline;
+  text-align: center;
+}
+a {
+  font-size: 14px;
+}
+nav a {
+  margin-bottom: 0;
+  border-bottom: 1px solid #C94422;
+  border-top: 1px solid #d3694e;
+  text-align: left;
+  padding-left: 1em;
+  font-weight: regular;
+  line-height: 10px;
+}
+a small {
+  font-size: 10px;
+  font-style: italic;
+}
+nav a:hover {
+  text-decoration: none;
+  background-color: #C94422;
+  border-bottom: 1px solid #d3694e;
+  border-top: 1px solid #C94422;
+}
+small {
+  font-size: 0.6em;
+}
+.title {
+  margin-bottom: 1em;
+}
+.fa-2x {
+  text-align: right;
+  margin-left: 3em;
+}
+.fa-2x:hover {
+  color: #ddd;
+}
+.track-title {
+  font-weight: bold;
 }
