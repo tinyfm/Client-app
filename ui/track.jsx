@@ -19,26 +19,30 @@ module.exports = React.createClass({
     var track = this.props.data;
 
     var rowClassName = cx(
-      'track',
-      this.state.expanded && 'track--expanded'
+      'episode',
+      this.state.expanded && 'episode-expanded'
     );
 
-    return (<li className={rowClassName}>
-      <a href='{this.props.uri}' onClick={this.handleExpand}>
-	<div className='track-title'>
-	  <i className='fa fa-play-circle'></i>
-	  {track.name}
-	</div>
+    return (<li className="track">
+      <a href={this.props.uri} className={rowClassName} onClick={this.handleExpand}>
+        <div className='track-title'>
+          <i className='fa fa-play-circle'></i>
+	        {this.formatTrackName()}
+        </div>
 
-	<small className='track-author'>
-	  {track.artists && track.artists[0]}
-	  {track.genre && '- ' + track.length}
-	  - {track.duration}
-	</small>
+        <small className='track-author'>
+          {track.artists && track.artists[0]}
+          {track.genre && '- ' + track.genre}
+        </small>
 
-	<div className='add-to-queue'>
-	  <button onClick={this.handleClick}>Add to queue</button>
-	</div>
+        <button className='add-to-queue' onClick={this.handleClick}>
+          Add to queue
+        </button>
+
+        <p className="additional-info">
+          <span className="label">{track.date}</span>
+          <span className="label">{this.formatDuration()}</span>
+        </p>
       </a>
     </li>);
   },
@@ -51,7 +55,20 @@ module.exports = React.createClass({
 
   handleClick: function(event){
     event.preventDefault();
+    event.stopPropagation();
 
     this.props.onClick && this.props.onClick(this.props.data);
+  },
+
+  formatTrackName: function(){
+    if (String(this.props.data.name).length < 60){
+      return this.props.data.name;
+    }
+
+    return this.props.data.name.slice(0, 60) + '…';
+  },
+
+  formatDuration: function(){
+    return Math.ceil(this.props.data.length / (1000 * 60 * 60)) + 'h.';
   }
 });

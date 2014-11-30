@@ -339,14 +339,18 @@ small {
 .fa-2x:hover {
   color: #ddd;
 }
+.track {
+  position: relative;
+}
 .track-title {
   font-weight: bold;
-  padding-left: 1em;
+  padding-left: 15px;
 }
 .add-to-queue {
-  text-align: right;
   font-family: 'Lobster', cursive;
-  padding-right: 1em;
+  position: absolute;
+  right: 15px;
+  top: 3em;
 }
 #now-playing {
   text-align: center;
@@ -382,17 +386,17 @@ progress::-moz-progress-bar {
   font-size: 15px;
   margin-top: -1.7em;
 }
-.episodes {
+.episode {
   height: 3em;
   -webkit-transition: width .5s ease, height .5s ease;
-  -webkit-transition: width .5s ease, height .5s ease;
+  -webkit-transition: width .5s ease, min-height .5s ease;
   -o-transition: width .5s ease, height .5s ease;
   transition: width .5s ease, height .5s ease;
 }
 .episode-expanded {
-  height: 8em;
+  height: 5em;
   -webkit-transition: width .5s ease, height .5s ease;
-  -moz-transition: width .5s ease, height .5s ease;
+  -webkit-transition: width .5s ease, height .5s ease;
   -o-transition: width .5s ease, height .5s ease;
   transition: width .5s ease, height .5s ease;
 }
@@ -403,7 +407,7 @@ progress::-moz-progress-bar {
   -webkit-transition: width .5s ease, height .5s ease;
   -o-transition: width .5s ease, height .5s ease;
   transition: width .5s ease, height .5s ease;
-}  
+}
 /* COLOUR PALETTE */
 
 nav a {
@@ -414,4 +418,30 @@ nav a:hover {
 }
 .header-container, .footer-container, .main aside {
   background: ;
+}
+
+.episode .additional-info{
+  display: none;
+}
+
+.episode .fa {
+  margin-right: 7.5px;
+}
+
+.episode .label,
+.episode .add-to-queue {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 5px;
+  padding: 2px 5px;
+}
+
+.episode .label:empty{
+  display: none;
+}
+
+.episode.episode-expanded .additional-info{
+  display: block;
 }

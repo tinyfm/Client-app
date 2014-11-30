@@ -17,25 +17,34 @@ var when = require('when');
  *   });
  * })
  */
-module.exports = function(mopidy){
-  function accumulateTracksInDirs(allTracks, dirs){
-    return when.all(dirs.map(function(dir){ return mopidy.library.browse({ uri: dir }) }))
-      .spread(function(results){
-	if (!results){
-	  return allTracks;
-	}
+module.exports = function (mopidy) {
+  function accumulateTracksInDirs (allTracks, dirs) {
+    return when.all(dirs.map(function (dir) {
+      return mopidy.library.browse({uri: dir})
+    }))
+      .spread(function (results) {
+        if (!results) {
+          return allTracks;
+        }
 
-	var tracks = allTracks.concat(getTracksFromRefs(results));
-	var dirs = getDirsFromRefs(results);
+        var tracks = allTracks.concat(getTracksFromRefs(results));
+        var dirs = getDirsFromRefs(results);
 
-	return accumulateTracksInDirs(tracks, dirs);
+        return accumulateTracksInDirs(tracks, dirs);
       })
   }
 
   return accumulateTracksInDirs([], [null])
-    .then(function(trackUris){
-      return mopidy.library.search({ uris: trackUris }).then(function(results){
-	return results[0].tracks;
+    .then(function (trackUris) {
+      return mopidy.library.search({uris: trackUris}).then(function (results) {
+        return results[0].tracks.filter(function(d){
+            return d.name;
+          }).sort(function (a, b) {
+            var aName = String(a.name || '');
+            var bName = String(b.name || '');
+
+            return aName > bName ? 1 : (aName < bName ? -1 : 0);
+          });
       })
     });
 };
@@ -43,11 +52,11 @@ module.exports = function(mopidy){
 var getTracksFromRefs = getTypeFromRefs.bind(null, 'track');
 var getDirsFromRefs = getTypeFromRefs.bind(null, 'directory');
 
-function getTypeFromRefs(type, refs){
-  return refs.filter(function(ref){
+function getTypeFromRefs (type, refs) {
+  return refs.filter(function (ref) {
     return ref.type === type;
   })
-    .map(function(ref){
+    .map(function (ref) {
       return ref.uri;
     });
 }
