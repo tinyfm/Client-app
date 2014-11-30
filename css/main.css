@@ -396,6 +396,14 @@ progress::-moz-progress-bar {
   -o-transition: width .5s ease, height .5s ease;
   transition: width .5s ease, height .5s ease;
 }
+.additional-info {
+  padding-left: 1em;
+  line-height: 16px;
+  -webkit-transition: width .5s ease, height .5s ease;
+  -webkit-transition: width .5s ease, height .5s ease;
+  -o-transition: width .5s ease, height .5s ease;
+  transition: width .5s ease, height .5s ease;
+}  
 /* COLOUR PALETTE */
 
 nav a {
