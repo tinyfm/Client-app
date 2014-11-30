@@ -308,19 +308,18 @@ h1 {
 }
 a {
   font-size: 14px;
+  font-family: 'Raleway', sans-serif;
 }
 nav a {
   margin-bottom: 0;
   border-bottom: 1px solid #C94422;
   border-top: 1px solid #d3694e;
   text-align: left;
-  padding-left: 1em;
   font-weight: regular;
   line-height: 10px;
 }
 a small {
   font-size: 10px;
-  font-style: italic;
 }
 nav a:hover {
   text-decoration: none;
@@ -330,6 +329,7 @@ nav a:hover {
 }
 small {
   font-size: 0.6em;
+  padding-left: 1.5em;
 }
 .title {
   margin-bottom: 1em;
@@ -343,4 +343,21 @@ small {
 }
 .track-title {
   font-weight: bold;
+  padding-left: 1em;
+}
+.add-to-queue {
+  text-align: right;
+  font-family: 'Lobster', cursive;
+  padding-right: 1em;
+}
+
+/* COLOUR PALETTE */
+nav a {
+  background-color: ;
+}
+nav a:hover {
+  background-color: ;
+}
+.header-container, .footer-container, .main aside {
+  background: ;
 }

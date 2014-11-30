@@ -9,7 +9,7 @@ function buildPlaylist(json) {
       var duration = tracks[i].duration;
 
       $("#tracks-list").append(
-        "<li><a href='#'><div class='track-title'>" + title + "</div><br>" + "<small class='track-author'>" + artist + " -  " + type + " -  " + duration + "</small></a></li>");
+        "<li><a href='#'><div class='track-title'><i class='fa fa-play-circle'></i>  " + title + "</div><br>" + "<small class='track-author'>" + artist + " -  " + type + " -  " + duration + "</small><div class='add-to-queue'>Add to queue</div></a></li>");
      }
   });
 };
