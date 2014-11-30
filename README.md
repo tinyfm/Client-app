@@ -1,7 +1,8 @@
-media-in-context-radio-jukebox-webapp
+tinyfm client-side webapp
 =====================================
 
-Client webapp for the-project-without-a-name
+Client webapp for tinyfm.
+Used to interact with tinyfm's broadcasting running order.
 
 # Install
 
@@ -16,3 +17,9 @@ cd client-app && npm install && npm run build
 git clone https://github.com/tinyfm/Client-app.git
 ```
 `Add a packaged app` in Firefox App Manager. Easy.
+
+# Licence and credits
+
+[Mozilla Public Licence](https://github.com/tinyfm/Client-app/blob/master/LICENSE)
+
+**Hacked together during Al Jazeera Canvas *Media in Context* hackathon** in Doha, Qatar.
