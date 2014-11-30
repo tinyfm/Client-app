@@ -350,7 +350,33 @@ small {
   font-family: 'Lobster', cursive;
   padding-right: 1em;
 }
-
+#now-playing {
+  text-align: center;
+  color: white;
+  margin-top: -1em;
+}
+progress {  
+  background-color: #C94422;  
+  border: 0;  
+  height: 3px;  
+  border-radius: 9px;  
+  width: 70%;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  margin-bottom: 2em;
+}
+progress::-moz-progress-bar {
+    background-color: #00A0B0;
+    border-radius: 3px;
+}
+progress::-webkit-progress-bar {  
+  /* style rules */  
+}  
+progress::-webkit-progress-value {  
+  /* style rules */  
+}
+progress::-moz-progress-bar {  
+  /* style rules */  
+}  
 /* COLOUR PALETTE */
 nav a {
   background-color: ;
