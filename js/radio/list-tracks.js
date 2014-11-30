@@ -37,8 +37,12 @@ module.exports = function (mopidy) {
   return accumulateTracksInDirs([], [null])
     .then(function (trackUris) {
       return mopidy.library.search({uris: trackUris}).then(function (results) {
-        return results[0].tracks.filter(function(d){
-            return d.name;
+        return results[0].tracks.map(function(d){
+            if (!d.name){
+              console.log(d.uri);
+              d.name = /track:(.+)$/.exec(d.uri)[1].split('/').pop();
+            }
+            return d;
           }).sort(function (a, b) {
             var aName = String(a.name || '');
             var bName = String(b.name || '');
