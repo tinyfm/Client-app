@@ -5,6 +5,7 @@ var React = require('react');
 
 var getTracks = require('./radio/list-tracks');
 var queueTrack = require('./radio/queue-track');
+var playbackHeartbeat = require('./radio/heartbeat');
 
 var TrackList = require('../ui/track-list.jsx');
 var NowPlaying = require('../ui/now-playing.jsx');
@@ -15,26 +16,15 @@ var client = new Mopidy({
 });
 
 (function(){
-  var currentTrack;
-
   client.on('state:online', function(){
     getTracks(client).then(updateList);
-    client.playback.getCurrentTrack()
-      .then(function(track){
-        updateNowPlaying(track);
-
-        setInterval(function(){
-          client.playback.getTimePosition().then(function(time){
-            updateNowPlaying(track, time);
-          });
-        }, 2500);
-      });
+    client.playback.getCurrentTrack().then(updateNowPlaying);
   });
 
-  client.on('event:trackPlaybackStarted', function(event){
-    currentTrack = event.tl_track.track;
+  client.once('state:online', playbackHeartbeat.bind(null, client, 2000, updateNowPlaying));
 
-    updateNowPlaying(currentTrack);
+  client.on('event:trackPlaybackStarted', function(event){
+    updateNowPlaying(event.tl_track.track);
   });
 })();
 

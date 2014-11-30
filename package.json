@@ -1,7 +1,7 @@
 {
   "name": "media-in-context-radio-jukebox-webapp",
   "version": "1.0.0",
-  "description": "media-in-context-radio-jukebox-webapp =====================================",
+  "description": "media-in-context-radio-jukebox-webapp",
   "main": "index.js",
   "scripts": {
     "build": "browserify -s jukebox js/ui.js -o js/bundle.js",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oncletom/media-in-context-radio-jukebox-webapp.git"
+    "url": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp.git"
   },
   "author": "",
   "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/oncletom/media-in-context-radio-jukebox-webapp/issues"
+    "url": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp/issues"
   },
-  "homepage": "https://github.com/oncletom/media-in-context-radio-jukebox-webapp",
+  "homepage": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp",
   "devDependencies": {
     "browserify": "^6.3.3",
     "watchify": "^2.1.1"

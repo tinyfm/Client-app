@@ -20,6 +20,6 @@ module.exports = React.createClass({
   },
 
   timeToPercentage: function(){
-    return Math.ceil(((this.props.track.length - this.props.currentTime) / this.props.track.length) * 100);
+    return Math.ceil((this.props.currentTime / this.props.track.length) * 100);
   }
 });

@@ -7,7 +7,7 @@ var Track = require('./track.jsx');
 
 module.exports = React.createClass({
   propTypes: {
-    tracks: React.PropTypes.object.isRequired,
+    tracks: React.PropTypes.array.isRequired,
     onTrackQueued: React.PropTypes.func
   },
 
