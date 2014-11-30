@@ -2,7 +2,10 @@
 
 var Mopidy = require('mopidy');
 var React = require('react');
+
 var getTracks = require('./radio/list-tracks');
+var queueTrack = require('./radio/queue-track');
+
 var TrackList = require('../ui/track-list.jsx');
 var NowPlaying = require('../ui/now-playing.jsx');
 
@@ -45,7 +48,7 @@ function updateNowPlaying(track, currentTime){
 
 function updateList(tracks){
   React.render(
-    React.createElement(TrackList, { tracks: tracks }),
+    React.createElement(TrackList, { tracks: tracks, onTrackQueued: queueTrack.bind(null, client) }),
     document.querySelector('.tracks-list__container')
   );
 }
