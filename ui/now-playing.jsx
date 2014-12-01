@@ -13,10 +13,25 @@ module.exports = React.createClass({
     }
 
     return (<div id="now-playing">
-      <p>Now playing: <b>{this.props.track.name}</b></p>
+      <p>Now playing: <b>{this.formatTrackName()}</b></p>
 
       <progress id="progressbar" value={this.timeToPercentage()} max="100"></progress>
     </div>);
+  },
+
+  formatTrackName: function(){
+    var name = '';
+
+    if (this.props.track.name) {
+      name = this.props.track.name;
+    }
+    else {
+      name = /track:(.+)$/.exec(this.props.track.uri)[1]
+        .split('/').pop()
+        .split('.').slice(0, -1).join('.');
+    }
+
+    return name;
   },
 
   timeToPercentage: function(){
