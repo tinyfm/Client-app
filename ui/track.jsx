@@ -31,8 +31,7 @@ module.exports = React.createClass({
         </div>
 
         <small className='track-author'>
-          {track.artists && track.artists[0]}
-          {track.genre && '- ' + track.genre}
+          {track.artists && track.artists[0].name}
         </small>
 
         <button className='add-to-queue' onClick={this.handleClick}>
@@ -41,6 +40,7 @@ module.exports = React.createClass({
 
         <p className="additional-info">
           <span className="label">{track.date}</span>
+          <span className="label">{track.genre && track.genre}</span>
           <span className="label">{this.formatDuration()}</span>
         </p>
       </a>
