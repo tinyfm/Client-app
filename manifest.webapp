@@ -1,0 +1,13 @@
+{
+  "name": "French Box",
+  "description": "Local webradio powered by the community",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "Basile Simon, Thomas Parisot, Alexandre Valette"
+  },
+  "permissions": {
+    "desktop-notification": {
+      "description": "Needed for creating system notifications. They will alert you of proximity with an available station."
+    }
+  }
+}
