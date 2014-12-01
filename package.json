@@ -1,11 +1,13 @@
 {
-  "name": "media-in-context-radio-jukebox-webapp",
+  "name": "tinyfm-client-app",
   "version": "1.0.0",
   "description": "media-in-context-radio-jukebox-webapp",
   "main": "index.js",
   "scripts": {
-    "build": "browserify -s jukebox js/ui.js -o js/bundle.js",
-    "watch": "watchify -v -s jukebox js/ui.js -o js/bundle.js",
+    "build": "npm run build-vendor && npm run build-app",
+    "build-vendor": "browserify -r react -r react-classset -o js/bundle-vendor.js",
+    "build-app": "browserify -x react -x react-classset js/main.js -o js/bundle-app.js",
+    "watch": "watchify -v -x react -x react-classset js/main.js -o js/bundle-app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
@@ -15,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp.git"
+    "url": "https://github.com/tinyfm/Client-app.git"
   },
   "author": "",
   "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp/issues"
+    "url": "https://github.com/tinyfm/Client-app/issues"
   },
-  "homepage": "https://github.com/basilesimon/media-in-context-radio-jukebox-webapp",
+  "homepage": "https://tinyfm.github.io",
   "devDependencies": {
     "browserify": "^6.3.3",
     "watchify": "^2.1.1"
